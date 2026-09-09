@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+}
+
+const { title, description, path = '' } = Astro.props;
+const canonical = new URL(path || '/', Astro.site);
+const fullTitle = title === 'ZINNIASHARK' ? title : `${title} · ZINNIASHARK`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f5f7f2" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ZINNIASHARK" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://zinniashark.com/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://zinniashark.com/og-image.svg" />
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="/" aria-label="ZINNIASHARK home">
+          <span class="brand-mark">Z</span>
+          <span>ZINNIASHARK</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="/products/">Products</a>
+          <a href="/support/">Support</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="/">ZINNIASHARK</a>
+          <p>Simple software for keeping what matters.</p>
+        </div>
+        <div class="footer-links">
+          <a href="/products/adequora-writer/">Adequora Writer</a>
+          <a href="/support/">Support</a>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Use</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© {new Date().getFullYear()} ZINNIASHARK. All rights reserved.</span>
+        <span>Geoje-si, Gyeongsangnam-do, Republic of Korea</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ZINNIASHARK</title>
+  <desc id="desc">Simple software for keeping what matters.</desc>
+  <rect width="1200" height="630" fill="#f5f7f2"/>
+  <circle cx="1030" cy="-20" r="310" fill="#d9efe7"/>
+  <circle cx="1120" cy="550" r="260" fill="#f5d9b8" opacity=".8"/>
+  <path d="M80 110h96" stroke="#287c68" stroke-width="10" stroke-linecap="round"/>
+  <text x="80" y="250" fill="#17251f" font-family="Arial, sans-serif" font-size="72" font-weight="700">ZINNIASHARK</text>
+  <text x="84" y="330" fill="#287c68" font-family="Arial, sans-serif" font-size="38">Simple software for keeping what matters.</text>
+  <text x="84" y="500" fill="#5a6b63" font-family="Arial, sans-serif" font-size="28">Adequora Writer · Coming soon to Microsoft Store</text>
+</svg>
