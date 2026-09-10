@@ -55,8 +55,5 @@ These Terms are governed by the laws of the Republic of Korea, without regard to
 ## 10. Contact
 
 **ZINNIASHARK**  
-Representative: DAESHIK YI  
-404, Jueun Art Villa, 1, Jinmok 2-gil  
-Geoje-si, Gyeongsangnam-do 53224  
-Republic of Korea  
-Email: [contact@zinniashark.com](mailto:contact@zinniashark.com)
+Geoje-si, Republic of Korea  
+[contact@zinniashark.com](mailto:contact@zinniashark.com)

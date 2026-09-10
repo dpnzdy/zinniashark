@@ -13,7 +13,6 @@ Please include enough detail for us to understand your question. Do not include 
 ## Company Information
 
 **Legal business name:** 지니아샥(ZINNIASHARK)  
-**Representative:** DAESHIK YI  
-**Address:** 404, Jueun Art Villa, 1, Jinmok 2-gil, Geoje-si, Gyeongsangnam-do 53224, Republic of Korea
+**Address:** Geoje-si, Republic of Korea
 
 Adequora Writer is currently under development and is planned for distribution through the Microsoft Store. The download link will be added here when the product is publicly available.
