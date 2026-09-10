@@ -4,5 +4,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://zinniashark.com',
   integrations: [sitemap()],
-  trailingSlash: 'never'
+  trailingSlash: 'always'
 });
