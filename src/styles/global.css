@@ -30,8 +30,6 @@ nav a:hover, .footer-links a:hover { color: var(--ink); }
 .hero-visual { position: relative; }
 .image-frame { overflow: hidden; border: 10px solid rgba(255,255,255,.72); border-radius: 30px; background: var(--ink); box-shadow: 18px 20px 0 var(--peach), 0 18px 50px rgba(23,37,31,.14); transform: rotate(1.5deg); }
 .image-frame img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
-.visual-caption { display: flex; align-items: center; gap: 10px; width: max-content; max-width: 90%; margin: 24px 0 0 auto; color: var(--muted); font-size: .83rem; }
-.caption-dot { width: 9px; height: 9px; flex: 0 0 auto; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px var(--mint); }
 .hero::after { content: ''; position: absolute; width: 430px; height: 430px; border-radius: 50%; background: var(--mint); right: -130px; top: -140px; z-index: -1; }
 .eyebrow { color: var(--green); text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 800; }
 h1, h2, h3 { line-height: 1.12; letter-spacing: -.035em; margin: 0 0 20px; }
