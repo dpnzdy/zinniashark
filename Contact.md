@@ -12,7 +12,6 @@ Please include enough detail for us to understand your question. Do not include 
 
 ## Company Information
 
-**Legal business name:** 지니아샥(ZINNIASHARK)  
-**Address:** Geoje-si, Republic of Korea
+**Legal business name:** 지니아샥(ZINNIASHARK)
 
 Adequora Writer is currently under development and is planned for distribution through the Microsoft Store. The download link will be added here when the product is publicly available.

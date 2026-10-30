@@ -55,5 +55,4 @@ These Terms are governed by the laws of the Republic of Korea, without regard to
 ## 10. Contact
 
 **ZINNIASHARK**  
-Geoje-si, Republic of Korea  
 [contact@zinniashark.com](mailto:contact@zinniashark.com)
