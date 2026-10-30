@@ -7,8 +7,6 @@ ZINNIASHARK ("ZINNIASHARK," "we," "us," or "our") respects your privacy. This Pr
 ## 1. Who We Are
 
 **Legal business name:** 지니아샥(ZINNIASHARK)  
-**Representative:** DAESHIK YI  
-**Address:** 404, Jueun Art Villa, 1, Jinmok 2-gil, Geoje-si, Gyeongsangnam-do 53224, Republic of Korea  
 **Privacy contact:** contact@zinniashark.com
 
 ## 2. Information We Collect
