@@ -1,24 +1,33 @@
 ---
 import '../styles/global.css';
+import { ui, localizedPath, type Locale } from '../i18n/ui';
 
 interface Props {
   title: string;
   description: string;
   path?: string;
+  locale?: Locale;
 }
 
-const { title, description, path = '' } = Astro.props;
-const canonical = new URL(path || '/', Astro.site);
+const { title, description, path = '/', locale = 'en' } = Astro.props;
+const labels = ui[locale];
+const href = (target: string) => localizedPath(target, locale);
+const canonical = new URL(href(path), Astro.site);
+const englishURL = new URL(localizedPath(path, 'en'), Astro.site);
+const koreanURL = new URL(localizedPath(path, 'ko'), Astro.site);
 const fullTitle = title === 'ZINNIASHARK' ? title : `${title} · ZINNIASHARK`;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f5f7f2" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={englishURL} />
+    <link rel="alternate" hreflang="ko" href={koreanURL} />
+    <link rel="alternate" hreflang="x-default" href={englishURL} />
     <link rel="icon" href="/images/logo.png" type="image/png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ZINNIASHARK" />
@@ -35,16 +44,23 @@ const fullTitle = title === 'ZINNIASHARK' ? title : `${title} · ZINNIASHARK`;
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="/" aria-label="ZINNIASHARK home">
+        <a class="brand" href={href('/')} aria-label={labels.home}>
           <img class="brand-logo" src="/images/logo.png" alt="" />
           <span>ZINNIASHARK</span>
         </a>
-        <nav aria-label="Main navigation">
-          <a href="/products/">Products</a>
-          <a href="/support/">Support</a>
-          <a href="/privacy/">Privacy</a>
-          <a href="/contact/">Contact</a>
-        </nav>
+        <div class="header-controls">
+          <nav aria-label={labels.navigation}>
+            <a href={href('/products/')}>{labels.products}</a>
+            <a href={href('/support/')}>{labels.support}</a>
+            <a href={href('/privacy/')}>{labels.privacy}</a>
+            <a href={href('/contact/')}>{labels.contact}</a>
+          </nav>
+          <nav class="language-switcher" aria-label={labels.languages}>
+            <a href={englishURL.pathname} lang="en" hreflang="en" aria-current={locale === 'en' ? 'true' : undefined}>English</a>
+            <span aria-hidden="true">|</span>
+            <a href={koreanURL.pathname} lang="ko" hreflang="ko" aria-current={locale === 'ko' ? 'true' : undefined}>한국어</a>
+          </nav>
+        </div>
       </div>
     </header>
     <main>
@@ -53,19 +69,19 @@ const fullTitle = title === 'ZINNIASHARK' ? title : `${title} · ZINNIASHARK`;
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <a class="brand footer-brand" href="/"><img class="brand-logo" src="/images/logo.png" alt="" /><span>ZINNIASHARK</span></a>
-          <p>Simple software for keeping what matters.</p>
+          <a class="brand footer-brand" href={href('/')}><img class="brand-logo" src="/images/logo.png" alt="" /><span>ZINNIASHARK</span></a>
+          <p>{labels.tagline}</p>
         </div>
         <div class="footer-links">
-          <a href="/products/adequora-writer/">Adequora Writer</a>
-          <a href="/support/">Support</a>
-          <a href="/privacy/">Privacy Policy</a>
-          <a href="/terms/">Terms of Use</a>
-          <a href="/contact/">Contact</a>
+          <a href={href('/products/adequora-writer/')}>Adequora Writer</a>
+          <a href={href('/support/')}>{labels.support}</a>
+          <a href={href('/privacy/')}>{labels.privacyPolicy}</a>
+          <a href={href('/terms/')}>{labels.terms}</a>
+          <a href={href('/contact/')}>{labels.contact}</a>
         </div>
       </div>
       <div class="container footer-bottom">
-        <span>© {new Date().getFullYear()} ZINNIASHARK. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} ZINNIASHARK. {labels.rights}</span>
       </div>
     </footer>
   </body>

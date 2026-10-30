@@ -1,0 +1,17 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+const features = [
+  ['내 컴퓨터에 보관', '문서를 컴퓨터에 직접 저장하세요.'],
+  ['모든 것을 하나의 파일에', '글, 표, 이미지, 오디오, 비디오를 하나의 `.adq` 파일에 담으세요.'],
+  ['강력한 암호화', '비밀번호 보호를 사용하면 Argon2id 키 유도와 AES-256-GCM 인증 암호화로 문서와 포함된 미디어를 보호합니다.'],
+  ['집중할 수 있는 편집', '복잡하지 않은 화면에서 필수 서식, 블록 편집, 키보드 단축키를 사용하세요.'],
+  ['문서 전체를 한눈에', '개요 탐색으로 긴 문서의 구조를 파악하고 원하는 곳으로 이동하세요.'],
+  ['자동 저장과 복구', '자동 저장과 복구 파일로 작업을 더 안전하게 보관하세요.'],
+];
+---
+<Layout locale="ko" title="Adequora Writer" description="Adequora Writer는 텍스트와 문서 구조, 멀티미디어를 위한 가벼운 로컬 글쓰기 및 기록 도구입니다." path="/products/adequora-writer/">
+  <section class="page-hero product-hero"><div class="container product-hero-grid"><div><span class="eyebrow">Adequora Writer</span><h1>소중한 기록을 내 컴퓨터에.</h1><p>클라우드 도구처럼 간편하고, 메모 앱보다 풍부하며, 워드프로세서보다 가볍습니다.</p><div class="actions"><span class="button">Microsoft Store 출시 예정</span><a class="button secondary" href="/ko/contact/">제품 문의</a></div></div><div class="product-image-wrap"><img src="/images/adequora-writer-image.jpeg" alt="하나의 작업 공간에서 텍스트, 이미지, 오디오를 보여주는 Adequora Writer" /><span class="image-badge">로컬 · 프라이버시 · 나의 소유</span></div></div></section>
+  <section class="section"><div class="container"><div class="section-intro"><span class="eyebrow">Adequora Writer를 선택하는 이유</span><h2>기록을 위한 차분한 공간.</h2><p class="muted">메모의 간편함, 문서의 체계적인 구조, 멀티미디어의 유연함을 하나의 가벼운 로컬 파일에 담았습니다.</p></div><div class="grid">{features.map(([title, text]) => <article class="card"><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+  <section class="section tinted"><div class="container product-panel"><div><span class="eyebrow">다양한 기록을 위해</span><h2>학습 노트부터 프로젝트 자료까지.</h2><p class="muted">학습, 회의, 연구, 프로젝트 자료 등 몇 년 뒤에도 다시 보고 싶은 기록에 활용하세요. 인터넷 연결 없이도 사용할 수 있습니다.</p></div><div class="card"><h3>`.adq` 형식을 중심으로 설계</h3><p>ADQ1 컨테이너, CBOR 직렬화, Deflate 압축, 첨부 자료 무결성 검사와 표준 암호 기술을 사용합니다.</p></div></div></section>
+  <section class="section"><div class="container"><div class="section-intro"><span class="eyebrow">출시 예정</span><h2>곧 만나보세요.</h2><p class="muted">Adequora Writer는 현재 개발 중이며 Microsoft Store를 통해 배포할 예정입니다. 정식 출시 후 다운로드 링크를 안내하겠습니다.</p><a class="button" href="/ko/contact/">ZINNIASHARK에 문의하기</a></div></div></section>
+</Layout>
