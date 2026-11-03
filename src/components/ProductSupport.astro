@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductResources from './ProductResources.astro';
+import StoreButton from './StoreButton.astro';
+import { writer } from '../data/adequora-writer';
+import type { Locale } from '../i18n/ui';
+interface Props { locale?: Locale }
+const { locale = 'en' } = Astro.props;
+const ko = locale === 'ko';
+const faqs = ko ? [
+  ['무료로 사용할 수 있나요?', `현재 공개 버전 ${writer.version}은 무료입니다. 앱 계정 등록이나 유료 라이선스 없이 사용할 수 있습니다. Store 설치·업데이트에는 Microsoft의 네트워크·계정 조건이 적용될 수 있습니다.`],
+  ['어떤 PC에서 사용할 수 있나요?', 'Windows 10 22H2(빌드 19045) 이상 또는 Windows 11의 x64 PC용입니다. 편집 화면에는 Microsoft Edge WebView2 Evergreen Runtime이 필요합니다. macOS·모바일·웹 편집기는 제공하지 않습니다.'],
+  ['문서는 어디에 저장하나요?', '동기화되지 않는 로컬 고정 NTFS 드라이브의 일반 폴더에 .adq 파일로 저장하세요. OneDrive·네트워크 공유·USB 등 이동식 저장소에는 저장을 지원하지 않습니다. 중요한 문서는 저장한 뒤 별도 사본으로 백업하세요.'],
+  ['.adq 파일에는 무엇을 담을 수 있나요?', '글, 표, 이미지, 오디오, 비디오를 하나의 문서에 담을 수 있습니다. 현재 앱은 ADQ2 문서와 논리 형식 v3를 지원하며 과거 ADQ 형식은 지원하지 않습니다. Word·한글·PDF·Markdown 가져오기·내보내기는 제공하지 않습니다.'],
+  ['인터넷 연결 없이 사용할 수 있나요?', '문서 작성·열기·저장은 로컬에서 동작합니다. Microsoft Store에서 앱을 설치하거나 업데이트할 때는 인터넷 연결이 필요할 수 있습니다.'],
+  ['작업 이어하기는 자동 저장인가요?', '작업 이어하기는 이 PC의 현재 Windows 사용자에서 열린 문서와 미저장 작업을 다음 실행에 이어서 편집하도록 돕습니다. 원본 .adq 파일 저장이나 별도 백업을 대신하지 않습니다. 변경 내용을 파일에 반영하려면 Ctrl+S로 저장하세요.'],
+] : [
+  ['Is it free?', `The current public version ${writer.version} is free. No app account or paid license is required. Microsoft Store installation and updates may have their own network and account requirements.`],
+  ['Which PCs are supported?', 'Use an x64 PC with Windows 10 22H2 (build 19045) or later, or Windows 11. The editor requires Microsoft Edge WebView2 Evergreen Runtime. macOS, mobile, and web editors are not provided.'],
+  ['Where should I save documents?', 'Save .adq files in a non-synced folder on a local fixed NTFS drive. Saving to OneDrive, network shares, USB, or other removable storage is not supported. Keep separate backup copies of important saved files.'],
+  ['What can an .adq file contain?', 'An .adq file brings writing, tables, images, audio, and video together. The current app supports ADQ2 documents with logical format version 3; legacy ADQ formats are not supported. Import and export for Word, HWP, PDF, and Markdown are not provided.'],
+  ['Can I work offline?', 'Writing, opening, and saving documents work locally. Installing or updating the app through Microsoft Store may require internet access.'],
+  ['Does continuing work save my document?', 'Continuing work helps you resume open documents and unsaved edits on the same PC and Windows user. It does not replace saving your .adq file or keeping separate backups. Use Ctrl+S to save changes to the file.'],
+];
+---
+<Layout locale={locale} title={ko ? '지원' : 'Support'} description={ko ? 'Adequora Writer 다운로드, 무료 이용, 지원 환경, 파일 저장에 대한 질문과 설치·사용 가이드, 제품 지원 연락처입니다.' : 'Find answers about Adequora Writer downloads, pricing, system requirements, and saving files, plus setup guides and product support.'} path="/support/">
+  <section class="page-hero"><div class="container"><span class="eyebrow">{ko ? '지원' : 'Support'}</span><h1>{ko ? '궁금한 점에 간단히 답합니다.' : 'Questions, answered simply.'}</h1><p>{ko ? '설치 전 확인부터 문서 작성과 문제 해결까지, 필요한 안내를 찾아보세요.' : 'Find the information you need, from setup and writing your first document to troubleshooting.'}</p></div></section>
+  <section class="section"><div class="container faq">
+    <details open><summary>{ko ? 'Adequora Writer는 어디에서 다운로드하나요?' : 'Where can I download Adequora Writer?'}</summary><p>{ko ? 'Microsoft Store에서 무료로 설치할 수 있습니다. 대한민국 Store에서 제공하며, 다른 지역은 Store 페이지에서 제공 여부를 확인하세요.' : 'Download the app for free from Microsoft Store. It is available in the South Korean Store; check the listing for availability in your region.'}</p><div class="actions"><StoreButton locale={locale} /></div></details>
+    {faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}
+    <details><summary>{ko ? '지원 문의는 어떻게 하나요?' : 'How can I contact support?'}</summary><p>{ko ? 'Adequora Writer 제품 문의: ' : 'For Adequora Writer product support: '}<a href={`mailto:${writer.email}`}>{writer.email}</a>.</p><p>{ko ? '앱 버전, Windows 버전, 문제 발생 순서와 오류 메시지를 함께 보내주세요. 비밀번호와 민감한 문서 내용은 제외하고, 화면 캡처에도 개인정보가 포함되어 있는지 확인하세요.' : 'Include your app version, Windows version, steps to reproduce the issue, and any error message. Omit passwords and sensitive document contents, and check screenshots for personal information.'}</p><p>{ko ? '회사 일반·비즈니스 문의: ' : 'For company and business inquiries: '}<a href="mailto:contact@zinniashark.com">contact@zinniashark.com</a>.</p></details>
+  </div></section>
+  <ProductResources locale={locale} />
+</Layout>

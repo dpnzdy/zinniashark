@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StoreButton from './StoreButton.astro';
+import ProductPreview from './ProductPreview.astro';
+import ProductResources from './ProductResources.astro';
+import { writer } from '../data/adequora-writer';
+import type { Locale } from '../i18n/ui';
+interface Props { locale?: Locale }
+const { locale = 'en' } = Astro.props;
+const ko = locale === 'ko';
+const features = ko ? [
+  ['내 컴퓨터에 보관', '문서를 내 PC의 로컬 파일로 열고 편집·저장합니다. 핵심 기능에 앱 계정이나 클라우드 업로드가 필요하지 않습니다.'],
+  ['모든 것을 하나의 파일에', '글, 표, 이미지, 오디오, 비디오를 하나의 .adq 파일에 담으세요.'],
+  ['문서별 비밀번호', '필요한 문서에 비밀번호를 설정하세요. Argon2id 키 유도와 AES-256-GCM 인증 암호화로 문서와 포함된 미디어를 보호합니다.'],
+  ['집중할 수 있는 편집', '문자·문단 서식, 표·목록·인용·코드 블록과 키보드 단축키를 사용하세요.'],
+  ['문서 전체를 한눈에', '제목과 목차로 긴 문서의 구조를 파악하고, 여러 문서 탭으로 자료를 오가세요.'],
+  ['이전 작업 이어하기', '이 PC의 현재 Windows 사용자에서 열린 문서와 미저장 작업을 이어서 엽니다. 원본 파일 저장과 별도 백업은 직접 해주세요.'],
+] : [
+  ['Keep it on your computer', 'Open, edit, and save local files on your PC. Core features require no app account or cloud upload.'],
+  ['One file for everything', 'Keep writing, tables, images, audio, and video together in one .adq file.'],
+  ['Document passwords', 'Protect individual documents with a password. Argon2id key derivation and AES-256-GCM authenticated encryption secure the document and embedded media.'],
+  ['Focused editing', 'Use text and paragraph formatting, tables, lists, quotes, code blocks, and keyboard shortcuts.'],
+  ['See the whole picture', 'Navigate long documents with headings and an outline, and move between documents with tabs.'],
+  ['Continue your work', 'Resume open documents and unsaved work on this PC under the same Windows user. Save files explicitly and keep separate backups.'],
+];
+const requirements = ko ? [
+  ['지원 환경', 'Windows 10 22H2(빌드 19045) 이상 · Windows 11 / x64 PC'],
+  ['편집 환경', 'Microsoft Edge WebView2 Evergreen Runtime 필요'],
+  ['저장 위치', '동기화되지 않는 로컬 고정 NTFS 폴더. OneDrive·네트워크 공유·USB 등 이동식 저장소에는 저장을 지원하지 않습니다.'],
+  ['문서 형식', '.adq 문서. Word·한글·PDF·Markdown 가져오기·내보내기는 제공하지 않습니다.'],
+] : [
+  ['System', 'Windows 10 22H2 (build 19045) or later · Windows 11 / x64 PC'],
+  ['Editor runtime', 'Microsoft Edge WebView2 Evergreen Runtime required'],
+  ['Save location', 'A non-synced folder on a local fixed NTFS drive. Saving to OneDrive, network shares, USB, or other removable storage is not supported.'],
+  ['Document format', '.adq documents. Import and export for Word, HWP, PDF, and Markdown are not provided.'],
+];
+---
+<Layout locale={locale} title="Adequora Writer" description={ko ? '글·표·이미지·음성·영상을 하나의 .adq 파일에 담는 무료 Windows 문서 작성 앱. Microsoft Store 다운로드와 설치·사용 안내를 확인하세요.' : 'A free Windows writing app for text, tables, images, audio, and video in one local .adq file. Download on Microsoft Store and find setup and user guides.'} path="/products/adequora-writer/" image={writer.screenshot} imageAlt={ko ? '공개 샘플 문서를 보여주는 Adequora Writer 실제 편집 화면' : 'The actual Adequora Writer editor with a public sample document'}>
+  <section class="page-hero product-hero">
+    <div class="container product-hero-grid">
+      <div>
+        <div class="product-identity"><img src={writer.icon} width="52" height="52" alt="" /><span class="eyebrow">Adequora Writer</span></div>
+        <span class="release-pill">{ko ? 'Microsoft Store 출시 · 현재 버전 무료' : 'Available on Microsoft Store · Current version free'}</span>
+        <h1>{ko ? '글과 미디어 자료를 한 문서에.' : 'Writing and media, in one document.'}</h1>
+        <p>{ko ? '글, 표, 이미지, 음성, 영상을 하나의 .adq 파일에 담는 무료 Windows 문서 작성 앱입니다. 소중한 기록을 내 컴퓨터에 보관하세요.' : 'A free Windows writing app that keeps text, tables, images, audio, and video in one .adq file. Keep what matters on your own computer.'}</p>
+        <div class="actions"><StoreButton locale={locale} /><a class="button secondary" href={writer.sample} hreflang="ko" target="_blank" rel="noopener noreferrer">{ko ? '샘플 문서 보기' : 'View sample (Korean)'}<span class="sr-only">{ko ? ' (새 탭에서 열림)' : ' (opens in a new tab)'}</span></a></div>
+        <p class="product-meta">Windows 10 22H2+ · Windows 11 · x64</p>
+      </div>
+      <ProductPreview locale={locale} eager />
+    </div>
+  </section>
+  <section class="section"><div class="container">
+    <div class="section-intro"><span class="eyebrow">{ko ? '주요 기능' : 'Why Adequora Writer'}</span><h2>{ko ? '기록을 위한 차분한 공간.' : 'One calm place for your records.'}</h2><p class="muted">{ko ? '메모의 간편함, 문서의 구조, 멀티미디어의 유연함을 하나의 로컬 파일에 담았습니다.' : 'Bring the ease of notes, the structure of documents, and the flexibility of multimedia into one local file.'}</p></div>
+    <div class="grid">{features.map(([title, text]) => <article class="card"><h3>{title}</h3><p>{text}</p></article>)}</div>
+  </div></section>
+  <section class="section tinted"><div class="container"><div class="use-case-copy">
+    <div><span class="eyebrow">{ko ? '다양한 기록을 위해' : 'Made for real records'}</span><h2>{ko ? '학습 노트부터 프로젝트 자료까지.' : 'From study notes to project archives.'}</h2><p class="muted">{ko ? '학습, 회의, 연구 자료와 일상의 사진·음성을 설명과 함께 모으세요. 인터넷 연결 없이도 문서를 작성할 수 있습니다.' : 'Collect study notes, meeting records, research, and everyday photos or audio alongside your own explanations. Write and edit without an internet connection.'}</p></div>
+  </div></div></section>
+  <section class="section"><div class="container">
+    <div class="section-intro"><span class="eyebrow">{ko ? '설치 전 확인' : 'Before you install'}</span><h2>{ko ? '나의 PC에서 시작하세요.' : 'Start on your Windows PC.'}</h2><p class="muted">{ko ? '현재 공개 버전은 무료로 제공합니다. 대한민국 Store에서 제공하며, 다른 지역은 Store 페이지에서 제공 여부를 확인하세요.' : 'The current public version is free and available in the South Korean Store. Check the Store listing for availability in your region.'}</p></div>
+    <dl class="requirements">{requirements.map(([title, text]) => <div><dt>{title}</dt><dd>{text}</dd></div>)}</dl>
+    <div class="resource-links"><a href={writer.installation} hreflang="ko">{ko ? '자세한 설치·저장 안내' : 'Setup & storage details (Korean)'} ↗</a><a href={writer.download} hreflang="ko">{ko ? '다운로드 안내' : 'Download information (Korean)'} ↗</a></div>
+  </div></section>
+  <ProductResources locale={locale} />
+  <section class="section"><div class="container download-panel">
+    <div><span class="eyebrow">{ko ? '지금 시작하세요' : 'Available now'}</span><h2>{ko ? '나의 기록이 이어지는 곳.' : 'A place to keep your records.'}</h2><p class="muted">{ko ? `첫 공개 버전 ${writer.version} · ` : `First public release ${writer.version} · `}<time datetime={writer.releaseDate}>{ko ? '2026년 11월 3일 출시' : 'Released November 3, 2026'}</time></p><StoreButton locale={locale} /></div>
+    <div class="support-contact"><h3>{ko ? '제품 지원이 필요하신가요?' : 'Need product support?'}</h3><a href={`mailto:${writer.email}`}>{writer.email}</a><p class="muted">{ko ? '앱 버전, Windows 버전과 문제 발생 순서를 알려주세요. 비밀번호나 민감한 문서 내용은 보내지 마세요.' : 'Include your app version, Windows version, and steps to reproduce the issue. Please omit passwords and sensitive document contents.'}</p></div>
+  </div></section>
+</Layout>

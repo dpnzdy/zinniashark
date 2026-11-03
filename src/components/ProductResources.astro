@@ -1,0 +1,32 @@
+---
+import type { Locale } from '../i18n/ui';
+import { writer } from '../data/adequora-writer';
+interface Props { locale?: Locale }
+const { locale = 'en' } = Astro.props;
+const ko = locale === 'ko';
+const resources = ko ? [
+  ['설치·시작 가이드', '지원 환경, WebView2와 첫 문서 저장 방법을 확인하세요.', writer.installation],
+  ['사용 가이드', '글을 쓰고 미디어를 더하고 이전 작업을 이어가는 방법을 알아보세요.', writer.guide],
+  ['문제 해결', '실행, 저장, 문서 열기와 미디어 문제의 해결 순서를 확인하세요.', writer.troubleshooting],
+] : [
+  ['Installation & setup', 'Check system requirements, WebView2, and how to save your first document.', writer.installation],
+  ['User guide', 'Learn to write, add media, and continue previous work.', writer.guide],
+  ['Troubleshooting', 'Find help with launching, saving, opening documents, and media.', writer.troubleshooting],
+];
+---
+<section class="section tinted">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">{ko ? '사용 안내' : 'Get started'}</span>
+      <h2>{ko ? '첫 문서부터 차근차근.' : 'Start with your first document.'}</h2>
+      <p class="muted">{ko ? '제품 전용 사이트에서 자세한 안내를 확인하세요.' : 'Detailed documentation is available on the product website in Korean.'}</p>
+    </div>
+    <div class="grid resource-grid">
+      {resources.map(([title, text, href]) => <a class="card resource-card" href={href} hreflang="ko"><h3>{title}{!ko && <span class="language-note">Korean</span>}</h3><p>{text}</p><span class="resource-arrow" aria-hidden="true">↗</span></a>)}
+    </div>
+    <div class="resource-links">
+      <a href={writer.releases} hreflang="ko">{ko ? '버전 소식과 알려진 제한' : 'Release notes & known limitations (Korean)'} ↗</a>
+      <a href={writer.privacy} hreflang="ko">{ko ? '앱 개인정보처리방침' : 'App privacy policy (Korean)'} ↗</a>
+    </div>
+  </div>
+</section>

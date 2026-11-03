@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import StoreButton from '../components/StoreButton.astro';
+import ProductPreview from '../components/ProductPreview.astro';
+import { writer } from '../data/adequora-writer';
 ---
 <Layout title="ZINNIASHARK" description="ZINNIASHARK develops simple application software and mobile apps for keeping what matters." path="/">
   <section class="hero home-hero">
-    <div class="container hero-grid">
+    <div class="container">
       <div class="hero-copy">
       <span class="eyebrow">Application software · Mobile apps</span>
       <h1>Simple software for keeping what matters.</h1>
@@ -13,28 +16,20 @@ import Layout from '../layouts/Layout.astro';
         <a class="button secondary" href="/contact/">Contact us</a>
       </div>
       </div>
-      <div class="hero-visual">
-        <div class="image-frame">
-          <img src="/images/home-image.jpeg" alt="People from around the world connected through ZINNIASHARK" />
-        </div>
-      </div>
     </div>
   </section>
 
   <section class="section tinted">
     <div class="container product-panel">
       <div>
-        <span class="eyebrow">Our first product</span>
+        <div class="product-identity"><img src={writer.icon} width="48" height="48" alt="" /><span class="eyebrow">Adequora Writer</span></div>
+        <span class="release-pill">Available on Microsoft Store · Current version free</span>
         <h2>A record-keeping tool that stays with you.</h2>
         <p class="muted">Adequora Writer keeps writing, tables, images, audio, and video together in one local file.</p>
-        <div class="actions"><a class="button" href="/products/adequora-writer/">Discover Adequora Writer</a></div>
+        <div class="actions"><StoreButton /><a class="button secondary" href="/products/adequora-writer/">Explore the app</a></div>
+        <p class="product-meta muted">Windows 10 22H2+ · Windows 11 · x64</p>
       </div>
-      <div class="product-art" aria-label="Adequora Writer product preview">
-        <div class="window-bar"><i></i><i></i><i></i></div>
-        <span class="pill">LOCAL · PRIVATE · SIMPLE</span>
-        <h3>Keep your thoughts in one place.</h3>
-        <p>Organize your records in a lightweight `.adq` file you can keep and open yourself.</p>
-      </div>
+      <ProductPreview />
     </div>
   </section>
 

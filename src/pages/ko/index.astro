@@ -1,21 +1,30 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import StoreButton from '../../components/StoreButton.astro';
+import ProductPreview from '../../components/ProductPreview.astro';
+import { writer } from '../../data/adequora-writer';
 ---
 <Layout locale="ko" title="ZINNIASHARK" description="ZINNIASHARK는 소중한 정보를 오래 간직할 수 있는 심플한 응용 소프트웨어와 모바일 앱을 만듭니다." path="/">
   <section class="hero home-hero">
-    <div class="container hero-grid">
+    <div class="container">
       <div class="hero-copy">
         <span class="eyebrow">응용 소프트웨어 · 모바일 앱</span>
         <h1>소중한 것을 간직하는 심플한 소프트웨어.</h1>
         <p>ZINNIASHARK는 정보를 정리하고 보호하며 오래 간직할 수 있도록 세심하게 설계한 도구를 만듭니다.</p>
         <div class="actions"><a class="button" href="/ko/products/adequora-writer/">Adequora Writer 살펴보기</a><a class="button secondary" href="/ko/contact/">문의하기</a></div>
       </div>
-      <div class="hero-visual"><div class="image-frame"><img src="/images/home-image.jpeg" alt="ZINNIASHARK를 통해 연결된 세계 각지의 사람들" /></div></div>
     </div>
   </section>
   <section class="section tinted"><div class="container product-panel">
-    <div><span class="eyebrow">첫 번째 제품</span><h2>오래 곁에 두는 기록 도구.</h2><p class="muted">Adequora Writer는 글, 표, 이미지, 오디오, 비디오를 하나의 로컬 파일에 담습니다.</p><div class="actions"><a class="button" href="/ko/products/adequora-writer/">Adequora Writer 알아보기</a></div></div>
-    <div class="product-art" aria-label="Adequora Writer 제품 미리보기"><div class="window-bar"><i></i><i></i><i></i></div><span class="pill">로컬 · 프라이버시 · 심플함</span><h3>생각을 한곳에 모으세요.</h3><p>직접 보관하고 열 수 있는 가벼운 `.adq` 파일로 기록을 정리하세요.</p></div>
+    <div>
+      <div class="product-identity"><img src={writer.icon} width="48" height="48" alt="" /><span class="eyebrow">Adequora Writer</span></div>
+      <span class="release-pill">Microsoft Store 출시 · 현재 버전 무료</span>
+      <h2>오래 곁에 두는 기록 도구.</h2>
+      <p class="muted">Adequora Writer는 글, 표, 이미지, 오디오, 비디오를 하나의 로컬 파일에 담습니다.</p>
+      <div class="actions"><StoreButton locale="ko" /><a class="button secondary" href="/ko/products/adequora-writer/">제품 살펴보기</a></div>
+      <p class="product-meta muted">Windows 10 22H2+ · Windows 11 · x64</p>
+    </div>
+    <ProductPreview locale="ko" />
   </div></section>
   <section class="section"><div class="container">
     <div class="section-intro"><span class="eyebrow">우리가 추구하는 것</span><h2>쓸모를 생각한 설계.</h2><p class="muted">명확하고 믿을 수 있으며, 사용자의 소유권을 존중하는 소프트웨어를 지향합니다.</p></div>

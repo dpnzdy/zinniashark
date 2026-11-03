@@ -1,14 +1,4 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import ProductSupport from '../../components/ProductSupport.astro';
 ---
-<Layout locale="ko" title="지원" description="ZINNIASHARK와 Adequora Writer에 대해 자주 묻는 질문과 답변입니다." path="/support/">
-  <section class="page-hero"><div class="container"><span class="eyebrow">지원</span><h1>궁금한 점에 간단히 답합니다.</h1><p>Adequora Writer에 대한 기본적인 질문과 답변을 모았습니다. 출시가 가까워지면 더 자세한 문서를 제공할 예정입니다.</p></div></section>
-  <section class="section"><div class="container faq">
-    <details open><summary>Adequora Writer는 언제 사용할 수 있나요?</summary><p>현재 개발 중이며 Microsoft Store를 통해 배포할 예정입니다. 정식 출시 후 다운로드 링크를 공개하겠습니다.</p></details>
-    <details><summary>계정이 필요한가요?</summary><p>로컬 도구로 설계되어 핵심 기능을 사용하는 데 계정이나 서버가 필요하지 않습니다.</p></details>
-    <details><summary>문서는 어디에 저장되나요?</summary><p>문서는 컴퓨터에 `.adq` 파일로 직접 저장하도록 설계되어 있습니다. 안전한 저장 위치를 선택하고 백업을 유지하는 것은 사용자의 책임입니다.</p></details>
-    <details><summary>`.adq` 파일에는 무엇을 담을 수 있나요?</summary><p>글, 표, 이미지, 오디오, 비디오를 하나의 문서에 담을 수 있습니다.</p></details>
-    <details><summary>인터넷 연결 없이 사용할 수 있나요?</summary><p>오프라인 사용을 위해 설계되었습니다. 다만 Microsoft Store에서 앱을 다운로드하거나 업데이트할 때는 인터넷 연결이 필요할 수 있습니다.</p></details>
-    <details><summary>지원 문의는 어떻게 하나요?</summary><p><a href="mailto:contact@zinniashark.com">contact@zinniashark.com</a>으로 이메일을 보내주세요. 비밀번호나 기타 민감한 정보는 보내지 마세요.</p></details>
-  </div></section>
-</Layout>
+<ProductSupport locale="ko" />

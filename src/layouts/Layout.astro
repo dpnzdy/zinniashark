@@ -1,15 +1,19 @@
 ---
 import '../styles/global.css';
 import { ui, localizedPath, type Locale } from '../i18n/ui';
+import { writer } from '../data/adequora-writer';
 
 interface Props {
   title: string;
   description: string;
   path?: string;
   locale?: Locale;
+  image?: string;
+  imageAlt?: string;
 }
 
-const { title, description, path = '/', locale = 'en' } = Astro.props;
+const { title, description, path = '/', locale = 'en', image = '/og-image.svg', imageAlt } = Astro.props;
+const socialImage = new URL(image, Astro.site);
 const labels = ui[locale];
 const href = (target: string) => localizedPath(target, locale);
 const canonical = new URL(href(path), Astro.site);
@@ -34,11 +38,13 @@ const fullTitle = title === 'ZINNIASHARK' ? title : `${title} · ZINNIASHARK`;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://zinniashark.com/og-image.svg" />
+    <meta property="og:image" content={socialImage} />
+    {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://zinniashark.com/og-image.svg" />
+    <meta name="twitter:image" content={socialImage} />
+    {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
     <title>{fullTitle}</title>
   </head>
   <body>
@@ -76,6 +82,7 @@ const fullTitle = title === 'ZINNIASHARK' ? title : `${title} · ZINNIASHARK`;
           <a href={href('/products/adequora-writer/')}>Adequora Writer</a>
           <a href={href('/support/')}>{labels.support}</a>
           <a href={href('/privacy/')}>{labels.privacyPolicy}</a>
+          <a href={writer.privacy} hreflang="ko">{labels.appPrivacy}</a>
           <a href={href('/terms/')}>{labels.terms}</a>
           <a href={href('/contact/')}>{labels.contact}</a>
         </div>
