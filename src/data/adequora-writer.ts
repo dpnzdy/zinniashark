@@ -4,10 +4,10 @@ const site = 'https://dpnzdy.github.io/adequora-writer/';
 export const writer = {
   name: 'ZinniaShark Note',
   previousName: 'Adequora Writer',
-  renamePublished: false,
+  renamePublished: true,
   firstReleaseDate: '2026-11-03',
-  version: '1.0.1.0',
-  releaseDate: '2026-11-03',
+  version: '1.0.2.0',
+  releaseDate: '2026-11-06',
   store: 'https://apps.microsoft.com/detail/9NKD9SB9HXMM',
   email: 'dpnzdy@zinniashark.com',
   site,

@@ -63,7 +63,7 @@ const requirements = ko ? [
   </div></section>
   <ProductResources locale={locale} />
   <section class="section"><div class="container download-panel">
-    <div><span class="eyebrow">{ko ? '지금 시작하세요' : 'Available now'}</span><h2>{ko ? '나의 기록이 이어지는 곳.' : 'A place to keep your records.'}</h2><p class="muted">{ko ? `현재 공개 버전 ${writer.version} · ` : `Current public version ${writer.version} · `}<time datetime={writer.firstReleaseDate}>{ko ? '최초 공개일 2026년 11월 3일' : 'First released November 3, 2026'}</time></p><StoreButton locale={locale} /></div>
+    <div><span class="eyebrow">{ko ? '지금 시작하세요' : 'Available now'}</span><h2>{ko ? '나의 기록이 이어지는 곳.' : 'A place to keep your records.'}</h2><p class="muted">{ko ? `현재 공개 버전 ${writer.version} · ` : `Current public version ${writer.version} · `}<time datetime={writer.releaseDate}>{ko ? '2026년 11월 6일 업데이트' : 'Updated November 6, 2026'}</time></p><StoreButton locale={locale} /></div>
     <div class="support-contact"><h3>{ko ? '제품 지원이 필요하신가요?' : 'Need product support?'}</h3><a href={`mailto:${writer.email}`}>{writer.email}</a><p class="muted">{ko ? '앱 버전, Windows 버전과 문제 발생 순서를 알려주세요. 비밀번호나 민감한 문서 내용은 보내지 마세요.' : 'Include your app version, Windows version, and steps to reproduce the issue. Please omit passwords and sensitive document contents.'}</p></div>
   </div></section>
 </Layout>
