@@ -35,11 +35,11 @@ const requirements = ko ? [
   ['Document format', '.adq documents. Import and export for Word, HWP, PDF, and Markdown are not provided.'],
 ];
 ---
-<Layout locale={locale} title="Adequora Writer" description={ko ? '글·표·이미지·음성·영상을 하나의 .adq 파일에 담는 무료 Windows 문서 작성 앱. Microsoft Store 다운로드와 설치·사용 안내를 확인하세요.' : 'A free Windows writing app for text, tables, images, audio, and video in one local .adq file. Download on Microsoft Store and find setup and user guides.'} path="/products/adequora-writer/" image={writer.screenshot} imageAlt={ko ? '공개 샘플 문서를 보여주는 Adequora Writer 실제 편집 화면' : 'The actual Adequora Writer editor with a public sample document'}>
+<Layout locale={locale} title="ZinniaShark Note" description={ko ? '글·표·이미지·음성·영상을 하나의 .adq 파일에 담는 무료 Windows 문서 작성 앱. Microsoft Store 다운로드와 설치·사용 안내를 확인하세요.' : 'A free Windows writing app for text, tables, images, audio, and video in one local .adq file. Download on Microsoft Store and find setup and user guides.'} path="/products/adequora-writer/" image={writer.screenshot} imageAlt={ko ? 'ZinniaShark Note의 공개 샘플 문서 편집 화면' : 'The ZinniaShark Note editor with a public sample document'}>
   <section class="page-hero product-hero">
     <div class="container product-hero-grid">
       <div>
-        <div class="product-identity"><img src={writer.icon} width="52" height="52" alt="" /><span class="eyebrow">Adequora Writer</span></div>
+        <div class="product-identity"><img src={writer.icon} width="52" height="52" alt="" /><span class="eyebrow">ZinniaShark Note</span></div>
         <span class="release-pill">{ko ? 'Microsoft Store 출시 · 현재 버전 무료' : 'Available on Microsoft Store · Current version free'}</span>
         <h1>{ko ? '글과 미디어 자료를 한 문서에.' : 'Writing and media, in one document.'}</h1>
         <p>{ko ? '글, 표, 이미지, 음성, 영상을 하나의 .adq 파일에 담는 무료 Windows 문서 작성 앱입니다. 소중한 기록을 내 컴퓨터에 보관하세요.' : 'A free Windows writing app that keeps text, tables, images, audio, and video in one .adq file. Keep what matters on your own computer.'}</p>
@@ -50,7 +50,7 @@ const requirements = ko ? [
     </div>
   </section>
   <section class="section"><div class="container">
-    <div class="section-intro"><span class="eyebrow">{ko ? '주요 기능' : 'Why Adequora Writer'}</span><h2>{ko ? '기록을 위한 차분한 공간.' : 'One calm place for your records.'}</h2><p class="muted">{ko ? '메모의 간편함, 문서의 구조, 멀티미디어의 유연함을 하나의 로컬 파일에 담았습니다.' : 'Bring the ease of notes, the structure of documents, and the flexibility of multimedia into one local file.'}</p></div>
+    <div class="section-intro"><span class="eyebrow">{ko ? '주요 기능' : 'Why ZinniaShark Note'}</span><h2>{ko ? '기록을 위한 차분한 공간.' : 'One calm place for your records.'}</h2><p class="muted">{ko ? '메모의 간편함, 문서의 구조, 멀티미디어의 유연함을 하나의 로컬 파일에 담았습니다.' : 'Bring the ease of notes, the structure of documents, and the flexibility of multimedia into one local file.'}</p></div>
     <div class="grid">{features.map(([title, text]) => <article class="card"><h3>{title}</h3><p>{text}</p></article>)}</div>
   </div></section>
   <section class="section tinted"><div class="container"><div class="use-case-copy">
@@ -63,7 +63,7 @@ const requirements = ko ? [
   </div></section>
   <ProductResources locale={locale} />
   <section class="section"><div class="container download-panel">
-    <div><span class="eyebrow">{ko ? '지금 시작하세요' : 'Available now'}</span><h2>{ko ? '나의 기록이 이어지는 곳.' : 'A place to keep your records.'}</h2><p class="muted">{ko ? `첫 공개 버전 ${writer.version} · ` : `First public release ${writer.version} · `}<time datetime={writer.releaseDate}>{ko ? '2026년 11월 3일 출시' : 'Released November 3, 2026'}</time></p><StoreButton locale={locale} /></div>
+    <div><span class="eyebrow">{ko ? '지금 시작하세요' : 'Available now'}</span><h2>{ko ? '나의 기록이 이어지는 곳.' : 'A place to keep your records.'}</h2><p class="muted">{ko ? `현재 공개 버전 ${writer.version} · ` : `Current public version ${writer.version} · `}<time datetime={writer.firstReleaseDate}>{ko ? '최초 공개일 2026년 11월 3일' : 'First released November 3, 2026'}</time></p><StoreButton locale={locale} /></div>
     <div class="support-contact"><h3>{ko ? '제품 지원이 필요하신가요?' : 'Need product support?'}</h3><a href={`mailto:${writer.email}`}>{writer.email}</a><p class="muted">{ko ? '앱 버전, Windows 버전과 문제 발생 순서를 알려주세요. 비밀번호나 민감한 문서 내용은 보내지 마세요.' : 'Include your app version, Windows version, and steps to reproduce the issue. Please omit passwords and sensitive document contents.'}</p></div>
   </div></section>
 </Layout>

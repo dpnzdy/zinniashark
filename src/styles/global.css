@@ -140,3 +140,6 @@ details p { color: var(--muted); max-width: 760px; margin-bottom: 0; }
   .product-panel { gap: 28px; }
   .resource-grid { grid-template-columns: 1fr; }
 }
+
+.rename-notice { padding-block: .6rem; font-size: .9rem; overflow-wrap: anywhere; }
+.rename-notice p { margin-block: .3rem; }

@@ -1,6 +1,6 @@
 # Contact ZINNIASHARK
 
-Have a question about ZINNIASHARK or Adequora Writer? We would be happy to hear from you.
+Have a question about ZINNIASHARK or ZinniaShark Note? We would be happy to hear from you.
 
 ## Email
 
@@ -14,4 +14,4 @@ Please include enough detail for us to understand your question. Do not include 
 
 **Legal business name:** 지니아샥(ZINNIASHARK)
 
-Adequora Writer is currently under development and is planned for distribution through the Microsoft Store. The download link will be added here when the product is publicly available.
+ZinniaShark Note is currently under development and is planned for distribution through the Microsoft Store. The download link will be added here when the product is publicly available.

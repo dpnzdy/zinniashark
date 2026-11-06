@@ -8,12 +8,12 @@ interface Props { locale?: Locale }
 const { locale = 'en' } = Astro.props;
 const ko = locale === 'ko';
 ---
-<Layout locale={locale} title={ko ? '제품' : 'Products'} description={ko ? 'ZINNIASHARK의 제품을 살펴보세요. 무료 Windows 문서 작성 앱 Adequora Writer를 Microsoft Store에서 만나보세요.' : 'Explore ZINNIASHARK software. Get Adequora Writer, a free Windows writing and record-keeping app, on Microsoft Store.'} path="/products/">
+<Layout locale={locale} title={ko ? '제품' : 'Products'} description={ko ? 'ZINNIASHARK의 제품을 살펴보세요. 무료 Windows 문서 작성 앱 ZinniaShark Note를 Microsoft Store에서 만나보세요.' : 'Explore ZINNIASHARK software. Get ZinniaShark Note, a free Windows writing and record-keeping app, on Microsoft Store.'} path="/products/">
   <section class="page-hero"><div class="container"><span class="eyebrow">{ko ? '제품' : 'Products'}</span><h1>{ko ? '목적이 분명한 도구.' : 'Tools with a clear purpose.'}</h1><p>{ko ? '유용한 일을 더 간편하게 할 수 있는 응용 소프트웨어와 모바일 앱을 만듭니다.' : 'We build application software and mobile apps that make useful work feel simpler.'}</p></div></section>
   <section class="section"><div class="container"><article class="product-panel">
     <div>
       <div class="product-identity"><img src={writer.icon} width="48" height="48" alt="" /><span class="eyebrow">{ko ? '출시됨 · Windows 앱' : 'Released · Windows app'}</span></div>
-      <h2>Adequora Writer</h2>
+      <h2>ZinniaShark Note</h2>
       <p class="muted">{ko ? '글, 표, 이미지, 오디오, 비디오를 하나의 로컬 .adq 파일에 담으세요. 현재 공개 버전은 Microsoft Store에서 무료로 제공합니다.' : 'Keep writing, tables, images, audio, and video together in one local .adq file. The current public version is free on Microsoft Store.'}</p>
       <div class="actions"><StoreButton locale={locale} /><a class="button secondary" href={localizedPath('/products/adequora-writer/', locale)}>{ko ? '제품 보기' : 'View product'}</a></div>
       <p class="product-meta muted">Windows 10 22H2+ · Windows 11 · x64</p>

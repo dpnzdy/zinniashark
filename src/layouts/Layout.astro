@@ -69,6 +69,7 @@ const fullTitle = title === 'ZINNIASHARK' ? title : `${title} · ZINNIASHARK`;
         </div>
       </div>
     </header>
+    <aside class="container rename-notice" role="note"><p>{locale === 'ko' ? `${writer.previousName}가 ${writer.name}로 이름을 ${writer.renamePublished ? '변경했습니다.' : '변경할 예정입니다. 현재 Store에는 이전 이름으로 표시될 수 있습니다.'}` : `${writer.previousName} ${writer.renamePublished ? 'has been renamed to' : 'will be renamed to'} ${writer.name}.${writer.renamePublished ? '' : ' The Store may still show the previous name.'}`}</p></aside>
     <main>
       <slot />
     </main>
@@ -79,7 +80,7 @@ const fullTitle = title === 'ZINNIASHARK' ? title : `${title} · ZINNIASHARK`;
           <p>{labels.tagline}</p>
         </div>
         <div class="footer-links">
-          <a href={href('/products/adequora-writer/')}>Adequora Writer</a>
+          <a href={href('/products/adequora-writer/')}>ZinniaShark Note</a>
           <a href={href('/support/')}>{labels.support}</a>
           <a href={href('/privacy/')}>{labels.privacyPolicy}</a>
           <a href={writer.privacy} hreflang="ko">{labels.appPrivacy}</a>

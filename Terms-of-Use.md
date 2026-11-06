@@ -6,7 +6,7 @@ These Terms of Use ("Terms") govern your use of **zinniashark.com** (the "Websit
 
 ## 1. About the Website
 
-The Website provides information about ZINNIASHARK and its software products, including Adequora Writer. Adequora Writer is currently under development and is planned for distribution through the Microsoft Store. Availability, features, pricing, and release timing may change without notice.
+The Website provides information about ZINNIASHARK and its software products, including ZinniaShark Note. ZinniaShark Note is currently under development and is planned for distribution through the Microsoft Store. Availability, features, pricing, and release timing may change without notice.
 
 ## 2. Permitted Use
 
@@ -38,7 +38,7 @@ The Website may contain links to third-party websites or services, including the
 
 The Website is provided on an "as available" basis. To the extent permitted by applicable law, ZINNIASHARK disclaims warranties that the Website will always be available, uninterrupted, error-free, or free of harmful components.
 
-Adequora Writer is a general-purpose writing and record-keeping tool. You are responsible for maintaining backups of your files and for deciding whether the product is appropriate for your intended use.
+ZinniaShark Note is a general-purpose writing and record-keeping tool. You are responsible for maintaining backups of your files and for deciding whether the product is appropriate for your intended use.
 
 ## 7. Limitation of Liability
 
